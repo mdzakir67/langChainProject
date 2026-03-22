@@ -28,13 +28,13 @@ After the success of the Iranian Revolution, Khomeini served as the country's de
         input_variables=["information"],
         template=summary_template)
     
-    # llm = ChatGroq(
-    #     model="llama-3.1-8b-instant",
-    #     #model="gemma-7b-it",
-    #     api_key=os.getenv("GROQ_API_KEY"),
-    #     temperature=0.9
-    # )
-    llm = ChatOllama(temperature=0,model='gemma3:270m')
+    llm = ChatGroq(
+        model="llama-3.1-8b-instant",
+        #model="gemma-7b-it",
+        api_key=os.getenv("GROQ_API_KEY"),
+        temperature=0.9
+    )
+    # llm = ChatOllama(temperature=0,model='gemma3:270m')
     
     summary_chain = summary_prompt_template | llm
     
